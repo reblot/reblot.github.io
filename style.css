@@ -1,0 +1,46 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body {background: #111111;}
+a {text-decoration: none;}
+.w3-overlay {display: block;cursor: pointer;z-index: 20;background: #070707;opacity: 1;transition: all ease 500ms;}
+#player-frame {position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);box-shadow: 0 0 15px rgba(0,0,0,0.75);max-width: 768px; width: 100%;max-height: 432px;height: 100%;}
+.w3-top {z-index: 15;font-size: 17px;}
+.w3-top .w3-bar-item{margin-top: 6px;}
+.search-container input[type=text] {padding: 6px;border: none;}
+.search-container button {float: right;padding: 6px 10px;background: #111;color: #fff;border: none;cursor: pointer;}
+@media (max-width:420px){.search-container input[type=text]{width: 133px;}}
+@media (max-width:320px){.search-container input[type=text]{width: 93px;}}
+.rb-ads {margin-top: 80px;}
+.rb-ads-warp {position: relative;max-width: 728px;margin: auto;}
+.rb-ads-header {cursor: pointer;}
+.rb-ads-header img {width: 100%;}
+.rb-content-desc {color:white; padding: 6px 18px; font-size: 18px;font-weight: 600;}
+.w3-content {max-width: 1160px}
+.w3-round {border-radius: 6px;}
+.main-img {height: 220px;width: 100%;}
+.w3-display-container:hover .play-img {display: block;}
+.play-img {position: absolute;z-index: 10;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);box-sizing: content-box;display: none;width: 32px;height: 44px;border-radius: 50%;padding: 18px 20px 18px 28px;}
+.play-img:before {content: "";position: absolute;z-index: 0;left: 50%;top: 50%;transform: translateX(-50%) translateY(-50%);display: block;width: 80px;height: 80px;background: #ba1f24;border-radius: 50%;animation: pulse-border 1500ms ease-out infinite;}
+.play-img:after {content: "";position: absolute;z-index: 1;left: 50%;top: 50%;transform: translateX(-50%) translateY(-50%);display: block;width: 80px;height: 80px;background: #fa183d;border-radius: 50%;transition: all 200ms;}
+.play-img:hover:after {background-color: darken(#fa183d, 10%);}
+.play-img span {display: block;position: relative;z-index: 3;width: 0;height: 0;border-left: 32px solid #fff;border-top: 22px solid transparent;border-bottom: 22px solid transparent;}
+.video-overlay-close {position: absolute;z-index: 20;top: 15px;right: 20px;font-size: 36px;line-height: 1;font-weight: 400;color: #fff;text-decoration: none;cursor: pointer;transition: all 200ms;}
+.video-overlay-close:hover {color: #fa183d;}
+@keyframes pulse-border {0% {transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);opacity: 1;} 100% {transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);opacity: 0;}}
+.w3-display-bottommiddle {cursor: pointer;width: 100%;padding-top: 14px;font-size: small;text-align: center;background: linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,1));}
+@media (max-width:760px){.w3-hide-small{display: none!important} .rb-bars{display: block!important;}}
+.rb-loader-container{height:100vh;width:100vw;font-family:Helvetica}
+.loader{height:20px;width:250px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto}
+.loader--dot{animation-name:loader;animation-timing-function:ease-in-out;animation-duration:3s;animation-iteration-count:infinite;height:20px;width:20px;border-radius:100%;background-color:black;position:absolute;border:2px solid white}
+.loader--dot:first-child{background-color:#8cc759;animation-delay:0.5s}
+.loader--dot:nth-child(2){background-color:#8c6daf;animation-delay:0.4s}
+.loader--dot:nth-child(3){background-color:#ef5d74;animation-delay:0.3s}
+.loader--dot:nth-child(4){background-color:#f9a74b;animation-delay:0.2s}
+.loader--dot:nth-child(5){background-color:#60beeb;animation-delay:0.1s}
+.loader--dot:nth-child(6){background-color:#fbef5a;animation-delay:0s}
+.loader--text{position:absolute;top:200%;left:0;right:0;width:4rem;margin:auto}
+.loader--text:after{content:"Loading";color:white;font-weight:700;animation-name:loading-text;animation-duration:3s;animation-iteration-count:infinite}
+@keyframes loader{15%{transform:translateX(0)}45%{transform:translateX(230px)}65%{transform:translateX(230px)}95%{transform:translateX(0)}}
+@keyframes loading-text{0%{content:"Loading"}25%{content:"Loading."}50%{content:"Loading.."}75%{content:"Loading..."}}
+
+
+
