@@ -660,8 +660,8 @@ async function updatePages() {
             hs = 1;
         }          
         let player = `  
-        <div class="w3-overlay w3-animate-opacity" onclick="javascript:history.go(-${hs})">
-        <a title="close" class="video-overlay-close">&times;</a>
+        <div class="w3-overlay w3-animate-opacity">
+        <a href="javascript:history.go(-${hs})" title="close" class="video-overlay-close">&times;</a>
         <iframe src="${src}" frameborder="0" allowfullscreen="allowfullscreen" id="player-frame"></iframe>        
         <div class="w3-container w3-center w3-bottom w3-margin-bottom">
         `;
