@@ -1,6 +1,7 @@
 const CACHE = "rb-movies-v1";
 const offlineFallbackPage = "offline.html";
 const staticAssets = [
+    '/',
     '/index.html',    
     offlineFallbackPage,
     'manifest.json',
