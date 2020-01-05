@@ -1,7 +1,5 @@
-const CACHE = "rb-movies-v2";
 const offlineFallbackPage = "offline.html";
 const staticAssets = [
-    '/',
     '/index.html',    
     offlineFallbackPage,
     'manifest.json',
@@ -17,44 +15,35 @@ const staticAssets = [
     'nophoto.png'
 ];
 
-self.addEventListener("install", function (event) {
-  event.waitUntil(
-    caches.open(CACHE).then(function (cache) {
-      return cache.addAll(staticAssets);
-    })
-  );
+self.addEventListener('install', async event => {
+  const cache = await caches.open('static-cache');
+  cache.addAll(staticAssets);
 });
 
-self.addEventListener("fetch", function (event) {
-  if (event.request.method !== "GET") return;
-  event.respondWith(
-    fetch(event.request)
-      .then(function (response) {        
-        event.waitUntil(updateCache(event.request, response.clone()));
-        return response;
-      })
-      .catch(function (error) {        
-        return fromCache(event.request);
-      })
-  );
+self.addEventListener('fetch', event => {
+  const req = event.request;
+  const url = new URL(req.url);
+
+  if (url.origin === location.url) {
+      event.respondWith(cacheFirst(req));
+  } else {
+      event.respondWith(networkFirst(req));
+  }
 });
 
-function fromCache(request) {  
-  return caches.open(CACHE).then(function (cache) {
-    return cache.match(request).then(function (matching) {
-      if (!matching || matching.status === 404) {        
-        if (request.destination !== "document" || request.mode !== "navigate") {
-          return Promise.reject("no-match");
-        }
-        return cache.match(offlineFallbackPage);
-      }
-      return matching;
-    });
-  });
+async function cacheFirst(req) {
+  const cachedResponse = caches.match(req);
+  return cachedResponse || fetch(req);
 }
 
-function updateCache(request, response) {
-  return caches.open(CACHE).then(function (cache) {
-    return cache.put(request, response);
-  });
+async function networkFirst(req) {
+  const cache = await caches.open('dynamic-cache');
+
+  try {
+      const res = await fetch(req);
+      cache.put(req, res.clone());
+      return res;
+  } catch (error) {
+      return await cache.match(req);
+  }
 }
