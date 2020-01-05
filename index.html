@@ -99,8 +99,8 @@ function toUpper(str) {
         <a href="/?page=series&id=1" title="series index" class="w3-bar-item w3-button w3-hide-small w3-hover-none">Series</a>           
         <a href="javascript:void(0);" title="Search" class="w3-button w3-right w3-hover-none">
             <div class="search-container">
-              <input type="text" placeholder="Search.." name="data" id="search-input">
-              <button type="button" onclick="run_search()"><i class="fa fa-search"></i></button>
+              <input type="text" placeholder="Search.." name="data" id="search-input" aria-label="Search Input">
+              <button type="button" aria-label="Search Button" onclick="run_search()"><i class="fa fa-search"></i></button>
             </div>          
         </a>
     </div>
@@ -115,7 +115,7 @@ function toUpper(str) {
 <div class="rb-ads">                    
 	<div class="rb-ads-warp">		
 		<div class="rb-ads-header">					
-			<a href="https://scotkane.me" title="Reblot" target="_blank">
+			<a href="https://scotkane.me" title="Reblot" rel="noreferrer" target="_blank">
                 <img alt="header-ads" src="https://scotkane.me/wp-content/themes/reblot/image/banner-728.png">
             </a>		
 		</div>
