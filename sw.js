@@ -1,11 +1,15 @@
 const CACHE = "rb-movies-v1";
 const offlineFallbackPage = "offline.html";
 const staticAssets = [
-    '/',
+    '/index.html',    
     offlineFallbackPage,
     'manifest.json',
-    'style.css',    
+    'style.css',
+    'w3.css',
+    'w3-theme-red',      
     'sw.js',
+    'OneSignalSDKUpdaterWorker.js',
+    'OneSignalSDKWorker.js',
     'icon.png',    
     '144.png',       
     'icon-512.png',
