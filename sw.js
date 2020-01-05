@@ -4,7 +4,7 @@ const staticAssets = [
     'manifest.json',
     'style.css',
     'w3.css',
-    'w3-theme-red',      
+    'w3-theme-red.css',      
     'sw.js',
     'OneSignalSDKUpdaterWorker.js',
     'OneSignalSDKWorker.js',
