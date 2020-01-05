@@ -1,7 +1,6 @@
-const offlineFallbackPage = "offline.html";
 const staticAssets = [
     '/index.html',    
-    offlineFallbackPage,
+    '/offline.html',
     'manifest.json',
     'style.css',
     'w3.css',
