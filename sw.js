@@ -1,17 +1,16 @@
 const staticAssets = [
-    '/index.html',    
-    '/offline.html',
-    'manifest.json',
-    'style.css',
-    'w3.css',
-    'w3-theme-red.css',      
-    'sw.js',
-    'OneSignalSDKUpdaterWorker.js',
-    'OneSignalSDKWorker.js',
-    'icon.png',    
-    '144.png',       
-    'icon-512.png',
-    'nophoto.png'
+    './',
+    './index.html',    
+    './offline.html',
+    './manifest.json',
+    './style.css',
+    './w3.css',
+    './w3-theme-red.css',      
+    './sw.js',
+    './icon.png',    
+    './144.png',       
+    './icon-512.png',
+    './nophoto.png'
 ];
 
 self.addEventListener('install', async event => {
