@@ -34,9 +34,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/icon.png">
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script>
-let app_id = "bd062593-a404-49a5-9c67-6cb60f044665"; //make aplication in onesignal.com and choose webpush typical site
 let movie_page = 770;
 let anime_page = 271;
 let drama_page = Math.ceil(968 / 2);
@@ -79,12 +77,6 @@ document.querySelector("#site_desc").setAttribute('content', seo_desc);
 document.querySelector("#twit_site").setAttribute('content', SITE_NAME);
 document.querySelector("#twit_title").setAttribute('content', seo_title+" | "+SITE_NAME);
 document.querySelector("#twit_desc").setAttribute('content', seo_desc);
-let OneSignal = window.OneSignal || [];
-OneSignal.push(function() {
-    OneSignal.init({
-        appId: app_id,
-    });
-});
 function toUpper(str) {
     return str
         .toLowerCase()
