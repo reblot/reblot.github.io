@@ -1,4 +1,4 @@
-const CACHE = "rb-movies-v1";
+const CACHE = "rb-movies-v2";
 const offlineFallbackPage = "offline.html";
 const staticAssets = [
     '/',
