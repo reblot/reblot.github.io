@@ -1,0 +1,24 @@
+{
+    "name": "Cinema",
+    "short_name": "Cinema",
+    "description": "Free Streams Movie, Anime, Drama, Series Online.",
+    "icons": [{
+      "src": "/144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      }, {
+        "src": "/icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }, {
+        "src": "/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#111111",
+    "theme_color": "#111111",
+    "gcm_sender_id": "482941778795",
+    "gcm_user_visible_only": true
+}

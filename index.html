@@ -12,7 +12,11 @@
 <meta name="twitter:title" id="twit_title">	
 <meta name="twitter:description" id="twit_desc">	
 <meta name="twitter:image" content="/icon.png"> 
-<link rel="manifest" id="manifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="red">
+<meta name="apple-mobile-web-app-title" content="Streams Movie">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="manifest" href="/manifest.json">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel='dns-prefetch' href='//www.google.com'/>
 <link rel='dns-prefetch' href='//www.youtube.com'/>
@@ -717,20 +721,14 @@ function openNav() {
         x.className = x.className.replace(' w3-show', ' w3-hide');
     }   
 }
-if ("serviceWorker" in navigator) {
-  if (navigator.serviceWorker.controller) {    
-  } else {    
-    navigator.serviceWorker
-      .register("sw.js", {
-        scope: "/"
-      })
-      .then(function (reg) {
-        console.log("Service worker has been registered for scope: " + reg.scope);
-      });
-  }
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+        .then((reg) => {
+            console.log('Service worker registered.', reg);
+        });
+    });
 }
-var textJson={"name":SITE_NAME,"short_name":SITE_NAME,"description":"Free Streams Movie, Anime, Drama, Series Online.","theme_color":"#111111","background_color":"#111111","display":"standalone","dir":"ltr","lang":"en-US","start_url":window.location.origin,"icons":[{"src":base_url+"144.png","sizes":"144x144","type":"image/png"},{"src":base_url+"icon.png","sizes":"192x192","type":"image/png"},{"src":base_url+"icon-512.png","sizes":"512x512","type":"image/png"}],"gcm_sender_id":"482941778795","gcm_user_visible_only":true}
-const stringManifest=JSON.stringify(textJson);const blob=new Blob([stringManifest],{type:'application/javascript'});const manifestURL=URL.createObjectURL(blob);document.querySelector('#manifest').setAttribute('href',manifestURL)
 </script>
 </body>
 </html>
