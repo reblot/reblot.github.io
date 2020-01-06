@@ -1,14 +1,12 @@
 const staticAssets = [
-    './',
-    './index.html',    
     './offline.html',
     './manifest.json',
     './style.css',
     './w3.css',
-    './w3-theme-red.css',      
+    './w3-theme-red.css',
     './sw.js',
-    './icon.png',    
-    './144.png',       
+    './icon.png',
+    './144.png',
     './icon-512.png',
     './nophoto.png'
 ];
