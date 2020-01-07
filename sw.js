@@ -1,6 +1,5 @@
-const CACHE = "Cinema-Cache-V1";
 const offlineFallbackPage = "./offline.html";
-const precacheFiles = [      
+const staticAssets = [      
     offlineFallbackPage,
     './manifest.json',
     './style.css',
@@ -13,12 +12,13 @@ const precacheFiles = [
     './nophoto.png'
   ];
 
-self.addEventListener('install', function(event) {
-    event.waitUntil(
-      caches.open(CACHE).then(function(cache) {
-        return cache.addAll(precacheFiles);
-      })
-    );
+self.addEventListener('install', async event => {
+const cache = await caches.open('static-cache');
+cache.addAll(staticAssets);
+});
+
+self.addEventListener("activate", function (event) {  
+  event.waitUntil(self.clients.claim());
 });
 
 self.addEventListener('fetch', function(event) {
