@@ -13,86 +13,25 @@ const precacheFiles = [
     './nophoto.png'
   ];
 
-self.addEventListener("install", function (event) { 
-  self.skipWaiting();
-  event.waitUntil(
-    caches.open(CACHE).then(async function (cache) {
-        return await cache.addAll(precacheFiles);        
-    })
-  );
+self.addEventListener('install', function(event) {
+    event.waitUntil(
+      caches.open(CACHE).then(function(cache) {
+        return cache.addAll(precacheFiles);
+      })
+    );
 });
 
 self.addEventListener("activate", function (event) {  
   event.waitUntil(self.clients.claim());
 });
 
-self.addEventListener("fetch", function (event) {
-  const req = event.request;
-  const url = new URL(req.url);
-  if (req.method !== "GET") return;
-  if (url.origin === location.url) {
-    networkFirstFetch(event);
-  } else {
-    cacheFirstFetch(event);
-  }
+self.addEventListener('fetch', function(event) {
+    event.respondWith(      
+      caches.match(event.request).then(function(response) {        
+        return response || fetch(event.request);
+      }).catch(function() {        
+        return caches.match(offlineFallbackPage);        
+      })
+    );
 });
-
-function cacheFirstFetch(event) {
-  event.respondWith(
-    fromCache(event.request).then(
-      function (response) {        
-        event.waitUntil(
-          fetch(event.request).then(function (response) {
-            return updateCache(event.request, response);
-          })
-        );
-        return response;
-      },
-      async function () {        
-        try {
-              const response = await fetch(event.request);              
-              event.waitUntil(updateCache(event.request, response.clone()));
-              return response;
-          }
-          catch (error) {             
-              if (event.request.destination !== "document" || event.request.mode !== "navigate") {
-                  return;
-              }              
-              const cache = await caches.open(CACHE);
-              cache.match(offlineFallbackPage);
-          }
-      }
-    )
-  );
-}
-
-function networkFirstFetch(event) {
-  event.respondWith(
-    fetch(event.request)
-      .then(function (response) {        
-        event.waitUntil(updateCache(event.request, response.clone()));
-        return response;
-      })
-      .catch(function (error) {        
-        return fromCache(event.request);
-      })
-  );
-}
-
-async function fromCache(request) { 
-  const cache = await caches.open(CACHE);
-    const matching = await cache.match(request);
-    if (!matching || matching.status === 404) {
-        return Promise.reject("no-match");
-    }
-    return matching;
-}
-
-async function updateCache(request, response) {
-  if (!comparePaths(request.url, avoidCachingPaths)) {
-    const cache = await caches.open(CACHE);
-      return cache.put(request, response);
-  }
-  return Promise.resolve();
-}
 
