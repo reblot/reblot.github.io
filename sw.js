@@ -16,24 +16,15 @@ self.addEventListener('install', async event => {
   cache.addAll(staticAssets);
 });
 
-self.addEventListener('fetch', event => {
-const req = event.request;
-event.respondWith(cacheFirst(req));
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.open('mysite-dynamic').then(function(cache) {
+      return cache.match(event.request).then(function (response) {
+        return response || fetch(event.request).then(function(response) {
+          cache.put(event.request, response.clone());
+          return response;
+        });
+      });
+    })
+  );
 });
-
-async function cacheFirst(req) {
-  const cachedResponse = caches.match(req);
-  return cachedResponse || fetch(req);
-}
-
-async function networkFirst(req) {
-  const cache = await caches.open('dynamic-cache');
-
-  try {
-      const res = await fetch(req);
-      cache.put(req, res.clone());
-      return res;
-  } catch (error) {
-      return await cache.match(req);
-  }
-}
