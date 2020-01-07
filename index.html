@@ -14,7 +14,7 @@
 <meta name="twitter:image" content="/icon.png"> 
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="red">
-<meta name="apple-mobile-web-app-title" content="Streams Movie">
+<meta name="apple-mobile-web-app-title" id="apple_title">
 <link rel="apple-touch-icon" href="/icon.png">
 <link rel="manifest" href="/manifest.json">
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -77,6 +77,7 @@ document.querySelector("#site_desc").setAttribute('content', seo_desc);
 document.querySelector("#twit_site").setAttribute('content', SITE_NAME);
 document.querySelector("#twit_title").setAttribute('content', seo_title+" | "+SITE_NAME);
 document.querySelector("#twit_desc").setAttribute('content', seo_desc);
+document.querySelector("#apple_title").setAttribute('content', seo_title+" | "+SITE_NAME);
 function toUpper(str) {
     return str
         .toLowerCase()
@@ -110,18 +111,16 @@ function toUpper(str) {
         <a href="/?page=drama&id=1" title="drama index" class="w3-bar-item w3-button">Drama</a>
         <a href="/?page=series&id=1" title="series index" class="w3-bar-item w3-button">Series</a>             
     </div>
-</div> 
-
-<div class="rb-ads">                    
-	<div class="rb-ads-warp">		
-		<div class="rb-ads-header">					
-			<a href="https://scotkane.me" title="Reblot" rel="noreferrer" target="_blank">
+</div>
+<div class="rb-ads">
+    <div class="rb-ads-warp">
+	<div class="rb-ads-header">
+	    <a href="https://scotkane.me" title="Reblot" rel="noreferrer" target="_blank">
                 <img alt="header-ads" src="https://scotkane.me/wp-content/themes/reblot/image/banner-728.png">
             </a>		
-		</div>
 	</div>
+    </div>
 </div>
-
 <div class="w3-content">
     <div class="w3-main" id="rb_movie1"></div>    
 </div>
