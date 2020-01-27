@@ -72,9 +72,34 @@ let movie_page=770;let anime_page=271;let drama_page=Math.ceil(968/2);let series
 <div class="w3-content">
     <div class="w3-main" id="rb_movie1"></div>    
 </div>
+<br>
+<div id="rn_ad_native_hjw9t"></div>
+<script src="//cdn.runative-syndicate.com/sdk/v1/n.js"></script>
+<script>
+   NativeAd({
+        element_id: "rn_ad_native_hjw9t",
+        spot: "83505f45a88a4b468fc633b14c18a4df",
+        type: "label-under",
+        cols: 6,
+        rows: 1,
+        title: "",
+        titlePosition: "left",
+        adsByPosition: "bottom-right",
+	breakpoints: [
+	          {
+	                    "cols": 2,
+	                    "width": 770
+	          }
+	],
+	styles: {
+		"container": {
+			"height": "220px"
+		}
+	}
+   });
+</script>
 <br><br>
-<footer class="w3-container w3-black w3-center">
-  <div id="rn_ad_native_zuaie"></div>
+<footer class="w3-container w3-black w3-center">  
   <h4>Follow Us</h4>
   <a class="w3-button w3-large w3-red" href="#" title="Facebook"><i class="fa fa-facebook"></i></a>
   <a class="w3-button w3-large w3-red" href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
@@ -125,41 +150,6 @@ let movie_page=770;let anime_page=271;let drama_page=Math.ceil(968/2);let series
 		"brandnameLabel": {
 			"line-height": "10px",
 			"padding-top": "1px"
-		}
-	}
-   });
-</script>
-<script>
-   NativeAd({
-        element_id: "rn_ad_native_zuaie",
-        spot: "f703bf4c2faf4be7b26d4f173d95db2a",
-        type: "label-under",
-        cols: 1,
-        rows: 1,
-        title: "",
-        titlePosition: "left",
-        adsByPosition: "bottom-right",
-	breakpoints: [
-	          {
-	                    "cols": 1,
-	                    "width": 770
-	          }
-	],
-	styles: {
-		"image": {
-			"padding-bottom": "170px"
-		},
-		"label": {
-			"height": "59px"
-		},
-		"container": {
-			"width": "300px",
-			"height": "250px",
-			"overflow": "hidden"
-		},
-		"headlineLink": {
-			"font-size": "15px",
-			"font-weight": "bold"
 		}
 	}
    });
