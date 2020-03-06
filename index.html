@@ -1,220 +1,94 @@
-<!DOCTYPE html> <html lang="en-US"> <head> <title>Streams Movie</title> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, 
-initial-scale=1"> <meta name="description" id="site_desc"> <meta name="theme-color" content="#111111"> <meta property="og:image" content="/icon.png"> 
-<meta name="google-site-verification" content="WYtjDclfImbGWWRWx98lD6MFfG0Hjt7VOvG3dH2L_m0"> <meta name="twitter:card" content="summary_large_image"> 
-<meta name="twitter:site" id="twit_site"> <meta name="twitter:title" id="twit_title"> <meta name="twitter:description" id="twit_desc"> <meta 
-name="twitter:image" content="/icon.png"> <meta name="apple-mobile-web-app-capable" content="yes"> <meta name="apple-mobile-web-app-status-bar-style" 
-content="red"> <meta name="apple-mobile-web-app-title" id="apple_title"> <link rel="apple-touch-icon" href="/icon.png"> <link rel="manifest" 
-href="/manifest.json"> <link rel="profile" href="http://gmpg.org/xfn/11"> <link rel='dns-prefetch' href='//www.google.com'/> <link rel='dns-prefetch' 
-href='//www.youtube.com'/> <link rel='dns-prefetch' href='//player.vimeo.com'/> <link rel='dns-prefetch' href='//api.dmcdn.net'/> <link rel='dns-prefetch' 
-href='//connect.facebook.net'/> <link rel='dns-prefetch' href='//player.twitch.tv'/> <link rel='dns-prefetch' href='//imasdk.googleapis.com'/> <link 
-rel='dns-prefetch' href='//content.jwplatform.com'/> <link rel='dns-prefetch' href='//cdn.jsdelivr.net'/> <link rel='dns-prefetch' href='//s.w.org'/> 
-<link rel="stylesheet" href="/w3.css"> <link rel="stylesheet" href="/w3-theme-red.css"> <link rel="stylesheet" 
-href="https://fonts.googleapis.com/css?family=Raleway"> <link rel="stylesheet" 
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <link rel="stylesheet" href="/style.css"> <link rel="icon" 
-href="/icon.png"> <style>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Streams Movie</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" id="site_desc">
+<meta name="theme-color" content="#111111">	
+<meta property="og:image" content="/icon.png">
+<meta name="google-site-verification" content="WYtjDclfImbGWWRWx98lD6MFfG0Hjt7VOvG3dH2L_m0">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" id="twit_site">
+<meta name="twitter:title" id="twit_title">	
+<meta name="twitter:description" id="twit_desc">	
+<meta name="twitter:image" content="/icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="red">
+<meta name="apple-mobile-web-app-title" id="apple_title">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel='dns-prefetch' href='//www.google.com'/>
+<link rel='dns-prefetch' href='//www.youtube.com'/>
+<link rel='dns-prefetch' href='//player.vimeo.com'/>
+<link rel='dns-prefetch' href='//api.dmcdn.net'/>
+<link rel='dns-prefetch' href='//connect.facebook.net'/>
+<link rel='dns-prefetch' href='//player.twitch.tv'/>
+<link rel='dns-prefetch' href='//imasdk.googleapis.com'/>
+<link rel='dns-prefetch' href='//content.jwplatform.com'/>
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net'/>
+<link rel='dns-prefetch' href='//s.w.org'/>
+<link rel="stylesheet" href="/w3.css">
+<link rel="stylesheet" href="/w3-theme-red.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="/icon.png">
+<style>
 #rb-overlay{position:fixed;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0);z-index:99999;cursor:pointer}
-</style> <script> let movie_page=770;let anime_page=271;let drama_page=Math.ceil(968/2);let series_page=623;let 
-SITE_NAME=window.location.hostname.replace("www.","");let url_string=window.location.href;let url=new URL(url_string);let 
-base_url=window.location.origin+"/";let v=url.searchParams.get("v");let id=url.searchParams.get("id");let title=url.searchParams.get("title");let 
-page=url.searchParams.get("page");let types=url.searchParams.get("types");let episode=url.searchParams.get("episode");let 
-search=url.searchParams.get("search");let nav=url.searchParams.get("nav");let seo_title;let 
-seo_desc;if(base_url==url_string){seo_title="Home";seo_desc="Free Streams Movie, Anime, Drama, Series Online."}else 
-if(v){seo_title1=title.replace(/[-]/gi," ");seo_type=toUpper(types);if(episode){seo_title=toUpper(seo_title1)+", Episode: 
-"+episode}else{seo_title=toUpper(seo_title1)}seo_desc="Watch Free Streaming "+seo_type+": "+seo_title+" Now!"}else 
-if(page){seo_title=toUpper(page);seo_desc="Index of "+seo_title+" Page "+id}else if(search){seo_title=search.replace(/[-]/gi," ");seo_desc="Index of 
-Search Page "+seo_title}document.title=seo_title+" | 
-"+SITE_NAME;document.querySelector("#site_desc").setAttribute('content',seo_desc);document.querySelector("#twit_site").setAttribute('content',SITE_NAME);document.querySelector("#twit_title").setAttribute('content',seo_title+" 
-| 
-"+SITE_NAME);document.querySelector("#twit_desc").setAttribute('content',seo_desc);document.querySelector("#apple_title").setAttribute('content',seo_title+" 
-| "+SITE_NAME);function toUpper(str){return str.toLowerCase().split(' ').map(function(word){return word[0].toUpperCase()+word.substr(1)}).join(' ')}
-</script> </head> <body> <div class="w3-top">
+</style>
+<script>
+let movie_page=770;let anime_page=271;let drama_page=Math.ceil(968/2);let series_page=623;let SITE_NAME=window.location.hostname.replace("www.","");let url_string=window.location.href;let url=new URL(url_string);let base_url=window.location.origin+"/";let v=url.searchParams.get("v");let id=url.searchParams.get("id");let title=url.searchParams.get("title");let page=url.searchParams.get("page");let types=url.searchParams.get("types");let episode=url.searchParams.get("episode");let search=url.searchParams.get("search");let nav=url.searchParams.get("nav");let seo_title;let seo_desc;if(base_url==url_string){seo_title="Home";seo_desc="Free Streams Movie, Anime, Drama, Series Online."}else if(v){seo_title1=title.replace(/[-]/gi," ");seo_type=toUpper(types);if(episode){seo_title=toUpper(seo_title1)+", Episode: "+episode}else{seo_title=toUpper(seo_title1)}seo_desc="Watch Free Streaming "+seo_type+": "+seo_title+" Now!"}else if(page){seo_title=toUpper(page);seo_desc="Index of "+seo_title+" Page "+id}else if(search){seo_title=search.replace(/[-]/gi," ");seo_desc="Index of Search Page "+seo_title}document.title=seo_title+" | "+SITE_NAME;document.querySelector("#site_desc").setAttribute('content',seo_desc);document.querySelector("#twit_site").setAttribute('content',SITE_NAME);document.querySelector("#twit_title").setAttribute('content',seo_title+" | "+SITE_NAME);document.querySelector("#twit_desc").setAttribute('content',seo_desc);document.querySelector("#apple_title").setAttribute('content',seo_title+" | "+SITE_NAME);function toUpper(str){return str.toLowerCase().split(' ').map(function(word){return word[0].toUpperCase()+word.substr(1)}).join(' ')}
+</script>
+</head> 
+<body>
+<div class="w3-top">
     <div class="w3-bar w3-theme-d3 w3-left-align">
-        <a href="javascript:void(0);" title="bars" class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-left w3-hover-none w3-theme-d2 rb-bars" 
-onclick="openNav()"><i class="fa fa-bars"></i></a>
+        <a href="javascript:void(0);" title="bars" class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-left w3-hover-none w3-theme-d2 rb-bars" onclick="openNav()"><i class="fa fa-bars"></i></a>
         <a href="/" title="home" class="w3-bar-item w3-button w3-hover-none"><i class="fa fa-home w3-margin-right"></i>Home</a>
         <a href="/?page=movie&id=1" title="movie index" class="w3-bar-item w3-button w3-hide-small w3-hover-none">Movie</a>
         <a href="/?page=anime&id=1" title="anime index" class="w3-bar-item w3-button w3-hide-small w3-hover-none">Anime</a>
         <a href="/?page=drama&id=1" title="drama index" class="w3-bar-item w3-button w3-hide-small w3-hover-none">Drama</a>
-        <a href="/?page=series&id=1" title="series index" class="w3-bar-item w3-button w3-hide-small w3-hover-none">Series</a>
+        <a href="/?page=series&id=1" title="series index" class="w3-bar-item w3-button w3-hide-small w3-hover-none">Series</a>           
         <a href="javascript:void(0);" title="Search" class="w3-button w3-right w3-hover-none">
             <div class="search-container">
               <input type="text" placeholder="Search.." name="data" id="search-input" aria-label="Search Input">
               <button type="button" aria-label="Search Button" onclick="run_search()"><i class="fa fa-search"></i></button>
-            </div>
+            </div>          
         </a>
     </div>
     <div id="navDemo" class="w3-bar-block w3-theme-d3 w3-hide">
         <a href="/?page=movie&id=1" title="movie index" class="w3-bar-item w3-button">Movie</a>
         <a href="/?page=anime&id=1" title="anime index" class="w3-bar-item w3-button">Anime</a>
         <a href="/?page=drama&id=1" title="drama index" class="w3-bar-item w3-button">Drama</a>
-        <a href="/?page=series&id=1" title="series index" class="w3-bar-item w3-button">Series</a>
-    </div> </div> <div class="rb-ads">
+        <a href="/?page=series&id=1" title="series index" class="w3-bar-item w3-button">Series</a>             
+    </div>
+</div>
+<div class="rb-ads">
     <div class="rb-ads-warp">
         <div class="rb-ads-header">
 	  <div id="rb-overlay"></div>
         </div>
-    </div> </div> <div class="w3-content">
-    <div class="w3-main" id="rb_movie1"></div> </div> <br><br> <footer class="w3-container w3-black w3-center">
+    </div>
+</div>
+<div class="w3-content">
+    <div class="w3-main" id="rb_movie1"></div>    
+</div>
+<br><br>
+<footer class="w3-container w3-black w3-center">  
   <h4>Follow Us</h4>
   <a class="w3-button w3-large w3-red" href="#" title="Facebook"><i class="fa fa-facebook"></i></a>
   <a class="w3-button w3-large w3-red" href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
   <a class="w3-button w3-large w3-red" href="#" title="Google +"><i class="fa fa-google-plus"></i></a>
   <a class="w3-button w3-large w3-red" href="#" title="Instagram"><i class="fa fa-instagram"></i></a>
-  <a class="w3-button w3-large w3-red w3-hide-small" href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a> </footer> <script> 
-document.querySelector("footer").innerHTML+='<p>Copyright © 2018. Created by <a href="/" title="Movie">'+SITE_NAME+'</a></p>';function 
-niceTitle(string_data){titles=string_data.replace(/[^\w\s]/gi,'');titles=titles.replace(/\s{1,}/gi,'-');titles=titles.toLowerCase();return titles}async 
-function updatePages(){if(base_url==url_string){my_loader=`<div class="rb-loader-container" id="rb_loader"><div class="loader"><div 
-class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div 
-class="loader--dot"></div><div class="loader--text"></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;const response=await 
-fetch("http://api.gdriveplayer.us/v1/movie/newest?limit=12", {cache: "no-cache"});const json_file=await response.json();const response2=await 
-fetch("http://api.gdriveplayer.us/v1/animes/newest?limit=12", {cache: "no-cache"});const json_file2=await response2.json();let json_file3;try{const 
-response3=await fetch("http://api.gdriveplayer.us/v1/drama/newest?limit=12&page=1", {cache: "no-cache"});json_file3=await 
-response3.json();}catch(err){const response3=await fetch("http://api.gdriveplayer.us/v1/drama/newest?limit=12&page=2", {cache: 
-"no-cache"});json_file3=await response3.json();}const response4=await fetch("http://api.gdriveplayer.us/v2/series/newest?limit=12", {cache: 
-"no-cache"});const json_file4=await response4.json();let home_html=`<h1 class="rb-content-desc">NEW MOVIE</h1><div class="w3-row-padding 
-rb-content">`;json_file.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container 
-w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.imdb}&types=movie" title="${niceTitle(value.title)}"><img class="main-img w3-round" 
-src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div 
-class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (${value.year})</p></div></a></div></div>`+'\n'});home_html+=`</div><h1 
-class="rb-content-desc">NEW ANIME</h1><div class="w3-row-padding rb-content">`;json_file2.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 
-w3-margin-bottom"><div class="w3-display-container w3-text-white"><a 
-href="/?title=${niceTitle(value.title)}&v=${value.id}&types=anime&episode=${value.total_episode}&id=${value.total_episode}" 
-title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" 
-onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle 
-w3-container"><p>${value.title} (Episode: ${value.total_episode})</p></div></a></div></div>`+'\n'});home_html+=`</div><h1 class="rb-content-desc">NEW 
-DRAMA</h1><div class="w3-row-padding rb-content">`;json_file3.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 w3-margin-bottom"><div 
-class="w3-display-container w3-text-white"><a 
-href="/?title=${niceTitle(value.title)}&v=${value.id}&types=drama&episode=${value.total_episode}&id=${value.total_episode}" 
-title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" 
-onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle 
-w3-container"><p>${value.title} (Episode: ${value.total_episode})</p></div></a></div></div>`+'\n'});home_html+=`</div><h1 class="rb-content-desc">NEW 
-SERIES</h1><div class="w3-row-padding rb-content">`;json_file4.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 w3-margin-bottom"><div 
-class="w3-display-container w3-text-white"><a 
-href="/?title=${niceTitle(value.title)}&v=${value.id}&types=series&episode=${value.total_episode}&id=${value.total_episode}" 
-title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" 
-onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle 
-w3-container"><p>${value.title} (Episode: 
-${value.total_episode})</p></div></a></div></div>`+'\n'});document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML+=home_html+'</div>'}else 
-if(page=="movie"&&id>=1&&id<=movie_page){my_loader=`<div class="rb-loader-container" id="rb_loader"><div class="loader"><div 
-class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div 
-class="loader--dot"></div><div class="loader--text"></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;const response=await 
-fetch(`http://api.gdriveplayer.us/v1/movie/newest?limit=24&page=${id}`, {cache: "no-cache"});const json_file=await response.json();let home_html=`<h1 
-class="rb-content-desc">MOVIE INDEX</h1><div class="w3-row-padding rb-content">`;json_file.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 
-w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.imdb}&types=movie" 
-title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" 
-onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle 
-w3-container"><p>${value.title} (${value.year})</p></div></a></div></div>`+'\n'});home_html+=`</div><br><div class="w3-container 
-w3-center">`;if(id==1){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa 
-fa-chevron-circle-left"></i></a>`}else{home_html+=`<a href="/?page=movie&id=${parseInt(id) - 1}" class="w3-btn w3-circle w3-red"><i class="fa 
-fa-chevron-circle-left"></i></a>`}home_html+=`<a href="javascript:void(0)" class="w3-btn w3-round-xxlarge w3-red"><b>${id} of 
-${movie_page}</b></a>`;if(id==movie_page){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa 
-fa-chevron-circle-right"></i></a>`}else{home_html+=`<a href="/?page=movie&id=${parseInt(id) + 1}" class="w3-btn w3-circle w3-red"><i class="fa 
-fa-chevron-circle-right"></i></a>`}document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML+=home_html+'</div>'}else 
-if(page=="anime"&&id>=1&&id<=anime_page){my_loader=`<div class="rb-loader-container" id="rb_loader"><div class="loader"><div 
-class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div 
-class="loader--dot"></div><div class="loader--text"></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;const response=await 
-fetch(`http://api.gdriveplayer.us/v1/animes/newest?limit=24&page=${id}`, {cache: "no-cache"});const json_file=await response.json();let home_html=`<h1 
-class="rb-content-desc">ANIME INDEX</h1><div class="w3-row-padding rb-content">`;json_file.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 
-w3-margin-bottom"><div class="w3-display-container w3-text-white"><a 
-href="/?title=${niceTitle(value.title)}&v=${value.id}&types=anime&episode=${value.total_episode}&id=${value.total_episode}" 
-title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" 
-onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle 
-w3-container"><p>${value.title} (Episode: ${value.total_episode})</p></div></a></div></div>`+'\n'});home_html+=`</div><br><div class="w3-container 
-w3-center">`;if(id==1){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa 
-fa-chevron-circle-left"></i></a>`}else{home_html+=`<a href="/?page=anime&id=${parseInt(id) - 1}" class="w3-btn w3-circle w3-red"><i class="fa 
-fa-chevron-circle-left"></i></a>`}home_html+=`<a href="javascript:void(0)" class="w3-btn w3-round-xxlarge w3-red"><b>${id} of 
-${anime_page}</b></a>`;if(id==anime_page){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa 
-fa-chevron-circle-right"></i></a>`}else{home_html+=`<a href="/?page=anime&id=${parseInt(id) + 1}" class="w3-btn w3-circle w3-red"><i class="fa 
-fa-chevron-circle-right"></i></a>`}document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML+=home_html+'</div>'}else 
-if(page=="drama"&&id>=1&&id<=drama_page){my_loader=`<div class="rb-loader-container" id="rb_loader"><div class="loader"><div 
-class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div 
-class="loader--dot"></div><div 
-class="loader--text"></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;if(id==1){idp=id}else{idp=(parseInt(id)*2)-1}let 
-json_file=[];try{const response1=await fetch(`http://api.gdriveplayer.us/v1/drama/newest?limit=12&page=${idp}`, {cache: "no-cache"});const 
-json_file1=await response1.json();json_file1.forEach(function(data){json_file.push(data)})}catch(err){}try{const response2=await 
-fetch(`http://api.gdriveplayer.us/v1/drama/newest?limit=12&page=${idp+1}`, {cache: "no-cache"});const json_file2=await 
-response2.json();json_file2.forEach(function(data){json_file.push(data)})}catch(err){}let home_html=`<h1 class="rb-content-desc">DRAMA INDEX</h1><div 
-class="w3-row-padding rb-content">`;json_file.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 w3-margin-bottom"><div 
-class="w3-display-container w3-text-white"><a 
-href="/?title=${niceTitle(value.title)}&v=${value.id}&types=drama&episode=${value.total_episode}&id=${value.total_episode}" 
-title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" 
-onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle 
-w3-container"><p>${value.title} (Episode: ${value.total_episode})</p></div></a></div></div>`+'\n'});home_html+=`</div><br><div class="w3-container 
-w3-center">`;if(id==1){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa 
-fa-chevron-circle-left"></i></a>`}else{home_html+=`<a href="/?page=drama&id=${parseInt(id) - 1}" class="w3-btn w3-circle w3-red"><i class="fa 
-fa-chevron-circle-left"></i></a>`}home_html+=`<a href="javascript:void(0)" class="w3-btn w3-round-xxlarge w3-red"><b>${id} of 
-${drama_page}</b></a>`;if(id==drama_page){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa 
-fa-chevron-circle-right"></i></a>`}else{home_html+=`<a href="/?page=drama&id=${parseInt(id) + 1}" class="w3-btn w3-circle w3-red"><i class="fa 
-fa-chevron-circle-right"></i></a>`}document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML+=home_html+'</div>'}else 
-if(page=="series"&&id>=1&&id<=series_page){my_loader=`<div class="rb-loader-container" id="rb_loader"><div class="loader"><div 
-class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div 
-class="loader--dot"></div><div class="loader--text"></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;const response=await 
-fetch(`http://api.gdriveplayer.us/v2/series/newest?limit=24&page=${id}`, {cache: "no-cache"});const json_file=await response.json();let home_html=`<h1 
-class="rb-content-desc">SERIES INDEX</h1><div class="w3-row-padding rb-content">`;json_file.forEach(function(value){home_html+=`<div class="w3-col l2 m3 
-s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a 
-href="/?title=${niceTitle(value.title)}&v=${value.id}&types=series&episode=${value.total_episode}&id=${value.total_episode}" 
-title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" 
-onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle 
-w3-container"><p>${value.title} (Episode: ${value.total_episode})</p></div></a></div></div>`+'\n'});home_html+=`</div><br><div class="w3-container 
-w3-center">`;if(id==1){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa 
-fa-chevron-circle-left"></i></a>`}else{home_html+=`<a href="/?page=series&id=${parseInt(id) - 1}" class="w3-btn w3-circle w3-red"><i class="fa 
-fa-chevron-circle-left"></i></a>`}home_html+=`<a href="javascript:void(0)" class="w3-btn w3-round-xxlarge w3-red"><b>${id} of 
-${series_page}</b></a>`;if(id==series_page){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa 
-fa-chevron-circle-right"></i></a>`}else{home_html+=`<a href="/?page=series&id=${parseInt(id) + 1}" class="w3-btn w3-circle w3-red"><i class="fa 
-fa-chevron-circle-right"></i></a>`}document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML+=home_html+'</div>'}else 
-if(search){my_loader=`<div class="rb-loader-container" id="rb_loader"><div class="loader"><div class="loader--dot"></div><div 
-class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div 
-class="loader--text"></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;let json_file=[];try{const response=await 
-fetch(`http://api.gdriveplayer.us/v1/movie/search?title=${search}`, {cache: "no-cache"});const json_file1=await 
-response.json();json_file1.forEach(function(data){json_file.push(data)})}catch(err){}try{const response=await 
-fetch(`http://api.gdriveplayer.us/v1/movie/search?year=${search}`, {cache: "no-cache"});const json_file1=await 
-response.json();json_file1.forEach(function(data){json_file.push(data)})}catch(err){}try{const response=await 
-fetch(`http://api.gdriveplayer.us/v1/animes/search?title=${search}`, {cache: "no-cache"});const json_file1=await 
-response.json();json_file1.forEach(function(data){data.search_type="anime";json_file.push(data)})}catch(err){}try{const response=await 
-fetch(`http://api.gdriveplayer.us/v1/drama/search?title=${search}`, {cache: "no-cache"});const json_file1=await 
-response.json();json_file1.forEach(function(data){data.search_type="drama";json_file.push(data)})}catch(err){}try{const response=await 
-fetch(`http://api.gdriveplayer.us/v2/series/search?title=${search}`, {cache: "no-cache"});const json_file1=await 
-response.json();json_file1.forEach(function(data){data.search_type="series";json_file.push(data)})}catch(err){}let home_html=`<h1 
-class="rb-content-desc">SEARCH RESULT</h1> <div class="w3-row-padding rb-content">`;let limit=24;let offset=(parseInt(id)-1)*limit;let 
-total_items=json_file.length;let total_pages=Math.ceil(total_items/limit);let 
-final=json_file.splice(offset,limit);if(id>=1&&id<=total_pages){final.forEach(function(value){let ids;if(value.imdb){ids=value.imdb}else{ids=value.id}let 
-params;let desc;if(value.search_type){params=`&types=${value.search_type}&episode=${value.total_episode}&id=${value.total_episode}`;desc=`${value.title} 
-(Episode: ${value.total_episode})`}else{params=`&types=movie`;desc=`${value.title} (${value.year})`}home_html+=`<div class="w3-col l2 m3 s6 
-w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${ids}&${params}" 
-title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" 
-onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle 
-w3-container"><p>${desc}</p></div></a></div></div>`+'\n'});home_html+=`</div><br><div class="w3-container w3-center">`;if(id==1){home_html+=`<a 
-href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-left"></i></a>`}else{home_html+=`<a 
-href="/?search=${search}&id=${parseInt(id) - 1}" class="w3-btn w3-circle w3-red"><i class="fa fa-chevron-circle-left"></i></a>`}home_html+=`<a 
-href="javascript:void(0)" class="w3-btn w3-round-xxlarge w3-red"><b>${id} of ${total_pages}</b></a>`;if(id==total_pages){home_html+=`<a 
-href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-right"></i></a>`}else{home_html+=`<a 
-href="/?search=${search}&id=${parseInt(id) + 1}" class="w3-btn w3-circle w3-red"><i class="fa 
-fa-chevron-circle-right"></i></a>`}document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML+=home_html+'</div>'}else{document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML='<h1 
-class="rb-content-desc">Nothing Found</h1>'}}else if(v){my_loader=`<div class="w3-overlay w3-animate-opacity" style="z-index:30;" id="rb_loader"><div 
-class="rb-loader-container"><div class="loader"><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div 
-class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div 
-class="loader--text"></div></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;let 
-src;if(types=="movie"){src=`//database.gdriveplayer.me/player.php?imdb=${v}`}if(types=="anime"){src=`//database.gdriveplayer.me/player.php?type=anime&id=${v}&episode=${id}`}if(types=="drama"){src=`//database.gdriveplayer.me/player.php?type=drama&id=${v}&episode=${id}`}if(types=="series"){src=`//database.gdriveplayer.me/player.php?type=series&id=${v}&episode=${id}`}let 
-hs;if(nav){hs=parseInt(nav)}else{hs=1}let player=`<div class="w3-overlay w3-animate-opacity"><a href="javascript:history.go(-${hs})" title="close" 
-class="video-overlay-close">&times;</a><iframe src="${src}" frameborder="0" allowfullscreen="allowfullscreen" id="player-frame"></iframe><div 
-class="w3-container w3-center w3-bottom" style="margin-bottom:64px;">`;if(types!="movie"){if(id==1){player+=`<a href="javascript:void(0)" class="w3-btn 
-w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-left"></i></a>`}else{player+=`<a 
-href="/?title=${title}&v=${v}&types=${types}&episode=${episode}&id=${parseInt(id) - 1}&nav=${hs +1}" class="w3-btn w3-circle w3-red"><i class="fa 
-fa-chevron-circle-left"></i></a>`}player+=`<select class="w3-btn w3-round-xxlarge w3-red" id="playerSelect" onchange="palyerSelect(this)" 
-style="outline:none;">`;for(let i=0;i<episode;i++){player+=`<option value="${i+1}">Episode 
-${i+1}</option>`}player+=`</select>`;if(id==episode){player+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa 
-fa-chevron-circle-right"></i></a>`}else{player+=`<a href="/?title=${title}&v=${v}&types=${types}&episode=${episode}&id=${parseInt(id) + 1}&nav=${hs +1}" 
-class="w3-btn w3-circle w3-red"><i class="fa 
-fa-chevron-circle-right"></i></a>`}}document.getElementById("rb_movie1").innerHTML+=player+'</div></div>';if(window.addEventListener){window.addEventListener('load',function(){document.getElementById("rb_loader").outerHTML="";document.getElementById("playerSelect").selectedIndex=id-1},!1)}else{window.attachEvent('onload',function(){document.getElementById("rb_loader").outerHTML="";document.getElementById("playerSelect").selectedIndex=id-1})}}else{document.getElementById("rb_movie1").innerHTML='<h1 
-class="rb-content-desc">Nothing Found</h1>'}}updatePages();const 
-searchInput=document.getElementById('search-input');searchInput.addEventListener('keypress',function(e){if(e.key=='Enter'){run_search()}});function 
-run_search(){s=searchInput.value;s=s.replace(/[^\w\s]/gi,'');s=s.replace(/\s{1,}/gi,"+");s=s.toLowerCase();a=window.location.protocol+"//";b=window.location.hostname+"/";c="?search="+s+"&id=1";window.location.href=a+b+c}function 
-openNav(){x=document.getElementById('navDemo');if(x.className.indexOf('w3-show')==-1){x.className=x.className.replace(' w3-hide',' 
-w3-show')}else{x.className=x.className.replace(' w3-show',' w3-hide')}}function 
-palyerSelect(e){a=window.location.protocol+"//";b=window.location.hostname+"/";let 
-hs;if(nav){hs=parseInt(nav)}else{hs=1};window.location.href=`${a+b}?title=${title}&v=${v}&types=${types}&episode=${episode}&id=${e.value}&nav=${hs 
-+1}`}if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').then((reg)=>{console.log('Service 
-worker registered.',reg)})})} </script> <script> var 
-rb_xxx='0';document.getElementById('rb-overlay').addEventListener('click',function(){rb_xxx++;if(rb_xxx==1){document.getElementById('rb-overlay').style.display='none';var 
-url='https://www.passeura.com/bf0j9p368?key=5fbb548e448c250ffdd4149f0524900a';var win=window.open(url,'_blank');win.focus()}else{}}) </script> </body>
+  <a class="w3-button w3-large w3-red w3-hide-small" href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+</footer>
+<script>
+document.querySelector("footer").innerHTML+='<p>Copyright © 2018. Created by <a href="/" title="Movie">'+SITE_NAME+'</a></p>';function niceTitle(string_data){titles=string_data.replace(/[^\w\s]/gi,'');titles=titles.replace(/\s{1,}/gi,'-');titles=titles.toLowerCase();return titles}async function updatePages(){if(base_url==url_string){my_loader=`<div class="rb-loader-container" id="rb_loader"><div class="loader"><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--text"></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;const response=await fetch("http://api.gdriveplayer.us/v1/movie/newest?limit=12", {cache: "no-cache"});const json_file=await response.json();const response2=await fetch("http://api.gdriveplayer.us/v1/animes/newest?limit=12", {cache: "no-cache"});const json_file2=await response2.json();let json_file3;try{const response3=await fetch("http://api.gdriveplayer.us/v1/drama/newest?limit=12&page=1", {cache: "no-cache"});json_file3=await response3.json();}catch(err){const response3=await fetch("http://api.gdriveplayer.us/v1/drama/newest?limit=12&page=2", {cache: "no-cache"});json_file3=await response3.json();}const response4=await fetch("http://api.gdriveplayer.us/v2/series/newest?limit=12", {cache: "no-cache"});const json_file4=await response4.json();let home_html=`<h1 class="rb-content-desc">NEW MOVIE</h1><div class="w3-row-padding rb-content">`;json_file.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.imdb}&types=movie" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (${value.year})</p></div></a></div></div>`+'\n'});home_html+=`</div><h1 class="rb-content-desc">NEW ANIME</h1><div class="w3-row-padding rb-content">`;json_file2.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.id}&types=anime&episode=${value.total_episode}&id=${value.total_episode}" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (Episode: ${value.total_episode})</p></div></a></div></div>`+'\n'});home_html+=`</div><h1 class="rb-content-desc">NEW DRAMA</h1><div class="w3-row-padding rb-content">`;json_file3.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.id}&types=drama&episode=${value.total_episode}&id=${value.total_episode}" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (Episode: ${value.total_episode})</p></div></a></div></div>`+'\n'});home_html+=`</div><h1 class="rb-content-desc">NEW SERIES</h1><div class="w3-row-padding rb-content">`;json_file4.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.id}&types=series&episode=${value.total_episode}&id=${value.total_episode}" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (Episode: ${value.total_episode})</p></div></a></div></div>`+'\n'});document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML+=home_html+'</div>'}else if(page=="movie"&&id>=1&&id<=movie_page){my_loader=`<div class="rb-loader-container" id="rb_loader"><div class="loader"><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--text"></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;const response=await fetch(`http://api.gdriveplayer.us/v1/movie/newest?limit=24&page=${id}`, {cache: "no-cache"});const json_file=await response.json();let home_html=`<h1 class="rb-content-desc">MOVIE INDEX</h1><div class="w3-row-padding rb-content">`;json_file.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.imdb}&types=movie" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (${value.year})</p></div></a></div></div>`+'\n'});home_html+=`</div><br><div class="w3-container w3-center">`;if(id==1){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-left"></i></a>`}else{home_html+=`<a href="/?page=movie&id=${parseInt(id) - 1}" class="w3-btn w3-circle w3-red"><i class="fa fa-chevron-circle-left"></i></a>`}home_html+=`<a href="javascript:void(0)" class="w3-btn w3-round-xxlarge w3-red"><b>${id} of ${movie_page}</b></a>`;if(id==movie_page){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-right"></i></a>`}else{home_html+=`<a href="/?page=movie&id=${parseInt(id) + 1}" class="w3-btn w3-circle w3-red"><i class="fa fa-chevron-circle-right"></i></a>`}document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML+=home_html+'</div>'}else if(page=="anime"&&id>=1&&id<=anime_page){my_loader=`<div class="rb-loader-container" id="rb_loader"><div class="loader"><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--text"></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;const response=await fetch(`http://api.gdriveplayer.us/v1/animes/newest?limit=24&page=${id}`, {cache: "no-cache"});const json_file=await response.json();let home_html=`<h1 class="rb-content-desc">ANIME INDEX</h1><div class="w3-row-padding rb-content">`;json_file.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.id}&types=anime&episode=${value.total_episode}&id=${value.total_episode}" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (Episode: ${value.total_episode})</p></div></a></div></div>`+'\n'});home_html+=`</div><br><div class="w3-container w3-center">`;if(id==1){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-left"></i></a>`}else{home_html+=`<a href="/?page=anime&id=${parseInt(id) - 1}" class="w3-btn w3-circle w3-red"><i class="fa fa-chevron-circle-left"></i></a>`}home_html+=`<a href="javascript:void(0)" class="w3-btn w3-round-xxlarge w3-red"><b>${id} of ${anime_page}</b></a>`;if(id==anime_page){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-right"></i></a>`}else{home_html+=`<a href="/?page=anime&id=${parseInt(id) + 1}" class="w3-btn w3-circle w3-red"><i class="fa fa-chevron-circle-right"></i></a>`}document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML+=home_html+'</div>'}else if(page=="drama"&&id>=1&&id<=drama_page){my_loader=`<div class="rb-loader-container" id="rb_loader"><div class="loader"><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--text"></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;if(id==1){idp=id}else{idp=(parseInt(id)*2)-1}let json_file=[];try{const response1=await fetch(`http://api.gdriveplayer.us/v1/drama/newest?limit=12&page=${idp}`, {cache: "no-cache"});const json_file1=await response1.json();json_file1.forEach(function(data){json_file.push(data)})}catch(err){}try{const response2=await fetch(`http://api.gdriveplayer.us/v1/drama/newest?limit=12&page=${idp+1}`, {cache: "no-cache"});const json_file2=await response2.json();json_file2.forEach(function(data){json_file.push(data)})}catch(err){}let home_html=`<h1 class="rb-content-desc">DRAMA INDEX</h1><div class="w3-row-padding rb-content">`;json_file.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.id}&types=drama&episode=${value.total_episode}&id=${value.total_episode}" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (Episode: ${value.total_episode})</p></div></a></div></div>`+'\n'});home_html+=`</div><br><div class="w3-container w3-center">`;if(id==1){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-left"></i></a>`}else{home_html+=`<a href="/?page=drama&id=${parseInt(id) - 1}" class="w3-btn w3-circle w3-red"><i class="fa fa-chevron-circle-left"></i></a>`}home_html+=`<a href="javascript:void(0)" class="w3-btn w3-round-xxlarge w3-red"><b>${id} of ${drama_page}</b></a>`;if(id==drama_page){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-right"></i></a>`}else{home_html+=`<a href="/?page=drama&id=${parseInt(id) + 1}" class="w3-btn w3-circle w3-red"><i class="fa fa-chevron-circle-right"></i></a>`}document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML+=home_html+'</div>'}else if(page=="series"&&id>=1&&id<=series_page){my_loader=`<div class="rb-loader-container" id="rb_loader"><div class="loader"><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--text"></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;const response=await fetch(`http://api.gdriveplayer.us/v2/series/newest?limit=24&page=${id}`, {cache: "no-cache"});const json_file=await response.json();let home_html=`<h1 class="rb-content-desc">SERIES INDEX</h1><div class="w3-row-padding rb-content">`;json_file.forEach(function(value){home_html+=`<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.id}&types=series&episode=${value.total_episode}&id=${value.total_episode}" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (Episode: ${value.total_episode})</p></div></a></div></div>`+'\n'});home_html+=`</div><br><div class="w3-container w3-center">`;if(id==1){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-left"></i></a>`}else{home_html+=`<a href="/?page=series&id=${parseInt(id) - 1}" class="w3-btn w3-circle w3-red"><i class="fa fa-chevron-circle-left"></i></a>`}home_html+=`<a href="javascript:void(0)" class="w3-btn w3-round-xxlarge w3-red"><b>${id} of ${series_page}</b></a>`;if(id==series_page){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-right"></i></a>`}else{home_html+=`<a href="/?page=series&id=${parseInt(id) + 1}" class="w3-btn w3-circle w3-red"><i class="fa fa-chevron-circle-right"></i></a>`}document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML+=home_html+'</div>'}else if(search){my_loader=`<div class="rb-loader-container" id="rb_loader"><div class="loader"><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--text"></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;let json_file=[];try{const response=await fetch(`http://api.gdriveplayer.us/v1/movie/search?title=${search}`, {cache: "no-cache"});const json_file1=await response.json();json_file1.forEach(function(data){json_file.push(data)})}catch(err){}try{const response=await fetch(`http://api.gdriveplayer.us/v1/movie/search?year=${search}`, {cache: "no-cache"});const json_file1=await response.json();json_file1.forEach(function(data){json_file.push(data)})}catch(err){}try{const response=await fetch(`http://api.gdriveplayer.us/v1/animes/search?title=${search}`, {cache: "no-cache"});const json_file1=await response.json();json_file1.forEach(function(data){data.search_type="anime";json_file.push(data)})}catch(err){}try{const response=await fetch(`http://api.gdriveplayer.us/v1/drama/search?title=${search}`, {cache: "no-cache"});const json_file1=await response.json();json_file1.forEach(function(data){data.search_type="drama";json_file.push(data)})}catch(err){}try{const response=await fetch(`http://api.gdriveplayer.us/v2/series/search?title=${search}`, {cache: "no-cache"});const json_file1=await response.json();json_file1.forEach(function(data){data.search_type="series";json_file.push(data)})}catch(err){}let home_html=`<h1 class="rb-content-desc">SEARCH RESULT</h1> <div class="w3-row-padding rb-content">`;let limit=24;let offset=(parseInt(id)-1)*limit;let total_items=json_file.length;let total_pages=Math.ceil(total_items/limit);let final=json_file.splice(offset,limit);if(id>=1&&id<=total_pages){final.forEach(function(value){let ids;if(value.imdb){ids=value.imdb}else{ids=value.id}let params;let desc;if(value.search_type){params=`&types=${value.search_type}&episode=${value.total_episode}&id=${value.total_episode}`;desc=`${value.title} (Episode: ${value.total_episode})`}else{params=`&types=movie`;desc=`${value.title} (${value.year})`}home_html+=`<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${ids}&${params}" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${desc}</p></div></a></div></div>`+'\n'});home_html+=`</div><br><div class="w3-container w3-center">`;if(id==1){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-left"></i></a>`}else{home_html+=`<a href="/?search=${search}&id=${parseInt(id) - 1}" class="w3-btn w3-circle w3-red"><i class="fa fa-chevron-circle-left"></i></a>`}home_html+=`<a href="javascript:void(0)" class="w3-btn w3-round-xxlarge w3-red"><b>${id} of ${total_pages}</b></a>`;if(id==total_pages){home_html+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-right"></i></a>`}else{home_html+=`<a href="/?search=${search}&id=${parseInt(id) + 1}" class="w3-btn w3-circle w3-red"><i class="fa fa-chevron-circle-right"></i></a>`}document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML+=home_html+'</div>'}else{document.getElementById("rb_loader").outerHTML="";document.getElementById("rb_movie1").innerHTML='<h1 class="rb-content-desc">Nothing Found</h1>'}}else if(v){my_loader=`<div class="w3-overlay w3-animate-opacity" style="z-index:30;" id="rb_loader"><div class="rb-loader-container"><div class="loader"><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--text"></div></div></div></div>`;document.getElementById("rb_movie1").innerHTML+=my_loader;let src;if(types=="movie"){src=`//database.gdriveplayer.me/player.php?imdb=${v}`}if(types=="anime"){src=`//database.gdriveplayer.me/player.php?type=anime&id=${v}&episode=${id}`}if(types=="drama"){src=`//database.gdriveplayer.me/player.php?type=drama&id=${v}&episode=${id}`}if(types=="series"){src=`//database.gdriveplayer.me/player.php?type=series&id=${v}&episode=${id}`}let hs;if(nav){hs=parseInt(nav)}else{hs=1}let player=`<div class="w3-overlay w3-animate-opacity"><a href="javascript:history.go(-${hs})" title="close" class="video-overlay-close">&times;</a><iframe src="${src}" frameborder="0" allowfullscreen="allowfullscreen" id="player-frame"></iframe><div class="w3-container w3-center w3-bottom" style="margin-bottom:64px;">`;if(types!="movie"){if(id==1){player+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-left"></i></a>`}else{player+=`<a href="/?title=${title}&v=${v}&types=${types}&episode=${episode}&id=${parseInt(id) - 1}&nav=${hs +1}" class="w3-btn w3-circle w3-red"><i class="fa fa-chevron-circle-left"></i></a>`}player+=`<select class="w3-btn w3-round-xxlarge w3-red" id="playerSelect" onchange="palyerSelect(this)" style="outline:none;">`;for(let i=0;i<episode;i++){player+=`<option value="${i+1}">Episode ${i+1}</option>`}player+=`</select>`;if(id==episode){player+=`<a href="javascript:void(0)" class="w3-btn w3-circle w3-red w3-disabled"><i class="fa fa-chevron-circle-right"></i></a>`}else{player+=`<a href="/?title=${title}&v=${v}&types=${types}&episode=${episode}&id=${parseInt(id) + 1}&nav=${hs +1}" class="w3-btn w3-circle w3-red"><i class="fa fa-chevron-circle-right"></i></a>`}}document.getElementById("rb_movie1").innerHTML+=player+'</div></div>';if(window.addEventListener){window.addEventListener('load',function(){document.getElementById("rb_loader").outerHTML="";document.getElementById("playerSelect").selectedIndex=id-1},!1)}else{window.attachEvent('onload',function(){document.getElementById("rb_loader").outerHTML="";document.getElementById("playerSelect").selectedIndex=id-1})}}else{document.getElementById("rb_movie1").innerHTML='<h1 class="rb-content-desc">Nothing Found</h1>'}}updatePages();const searchInput=document.getElementById('search-input');searchInput.addEventListener('keypress',function(e){if(e.key=='Enter'){run_search()}});function run_search(){s=searchInput.value;s=s.replace(/[^\w\s]/gi,'');s=s.replace(/\s{1,}/gi,"+");s=s.toLowerCase();a=window.location.protocol+"//";b=window.location.hostname+"/";c="?search="+s+"&id=1";window.location.href=a+b+c}function openNav(){x=document.getElementById('navDemo');if(x.className.indexOf('w3-show')==-1){x.className=x.className.replace(' w3-hide',' w3-show')}else{x.className=x.className.replace(' w3-show',' w3-hide')}}function palyerSelect(e){a=window.location.protocol+"//";b=window.location.hostname+"/";let hs;if(nav){hs=parseInt(nav)}else{hs=1};window.location.href=`${a+b}?title=${title}&v=${v}&types=${types}&episode=${episode}&id=${e.value}&nav=${hs +1}`}if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').then((reg)=>{console.log('Service worker registered.',reg)})})}
+</script>
+<script>
+var rb_xxx='0';document.getElementById('rb-overlay').addEventListener('click',function(){rb_xxx++;if(rb_xxx==1){document.getElementById('rb-overlay').style.display='none';var url='https://www.passeura.com/bf0j9p368?key=5fbb548e448c250ffdd4149f0524900a';var win=window.open(url,'_blank');win.focus()}else{}})
+</script>
+</body>
 </html>
