@@ -36,7 +36,58 @@
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/icon.png">
 <script>
-let movie_page=770;let anime_page=271;let drama_page=Math.ceil(968/2);let series_page=623;let SITE_NAME=window.location.hostname.replace("www.","");let url_string=window.location.href;let url=new URL(url_string);let base_url=window.location.origin+"/";let v=url.searchParams.get("v");let id=url.searchParams.get("id");let title=url.searchParams.get("title");let page=url.searchParams.get("page");let types=url.searchParams.get("types");let episode=url.searchParams.get("episode");let search=url.searchParams.get("search");let nav=url.searchParams.get("nav");let seo_title;let seo_desc;if(base_url==url_string){seo_title="Home";seo_desc="Free Streams Movie, Anime, Drama, Series Online."}else if(v){seo_title1=title.replace(/[-]/gi," ");seo_type=toUpper(types);if(episode){seo_title=toUpper(seo_title1)+", Episode: "+episode}else{seo_title=toUpper(seo_title1)}seo_desc="Watch Free Streaming "+seo_type+": "+seo_title+" Now!"}else if(page){seo_title=toUpper(page);seo_desc="Index of "+seo_title+" Page "+id}else if(search){seo_title=search.replace(/[-]/gi," ");seo_desc="Index of Search Page "+seo_title}document.title=seo_title+" | "+SITE_NAME;document.querySelector("#site_desc").setAttribute('content',seo_desc);document.querySelector("#twit_site").setAttribute('content',SITE_NAME);document.querySelector("#twit_title").setAttribute('content',seo_title+" | "+SITE_NAME);document.querySelector("#twit_desc").setAttribute('content',seo_desc);document.querySelector("#apple_title").setAttribute('content',seo_title+" | "+SITE_NAME);function toUpper(str){return str.toLowerCase().split(' ').map(function(word){return word[0].toUpperCase()+word.substr(1)}).join(' ')}
+let movie_page = 770;
+let anime_page = 271;
+let drama_page = Math.ceil(968 / 2);
+let series_page = 623;
+let SITE_NAME = window.location.hostname.replace("www.", "");
+let url_string = window.location.href;
+let url = new URL(url_string);
+let base_url = window.location.origin + "/";
+let v = url.searchParams.get("v");
+let id = url.searchParams.get("id");
+let title = url.searchParams.get("title");
+let page = url.searchParams.get("page");
+let types = url.searchParams.get("types");
+let episode = url.searchParams.get("episode");
+let search = url.searchParams.get("search");
+let nav = url.searchParams.get("nav");
+let seo_title;
+let seo_desc;
+if (base_url == url_string) {
+    seo_title = "Home";
+    seo_desc = "Free Streams Movie, Anime, Drama, Series Online.";
+} else if (v) {
+    seo_title1 = title.replace(/[-]/gi, " ");
+    seo_type = toUpper(types);
+    if (episode) {
+        seo_title = toUpper(seo_title1) + ", Episode: " + episode;
+    } else {
+        seo_title = toUpper(seo_title1);
+    }
+    seo_desc = "Watch Free Streaming " + seo_type + ": " + seo_title + " Now!";
+} else if (page) {
+    seo_title = toUpper(page);
+    seo_desc = "Index of " + seo_title + " Page " + id;
+} else if (search) {
+    seo_title = search.replace(/[-]/gi, " ");
+    seo_desc = "Index of Search Page " + seo_title;
+}
+document.title = seo_title + " | " + SITE_NAME;
+document.querySelector("#site_desc").setAttribute("content", seo_desc);
+document.querySelector("#twit_site").setAttribute("content", SITE_NAME);
+document.querySelector("#twit_title").setAttribute("content", seo_title + " | " + SITE_NAME);
+document.querySelector("#twit_desc").setAttribute("content", seo_desc);
+document.querySelector("#apple_title").setAttribute("content", seo_title + " | " + SITE_NAME);
+function toUpper(str) {
+    return str
+        .toLowerCase()
+        .split(" ")
+        .map(function (word) {
+            return word[0].toUpperCase() + word.substr(1);
+        })
+        .join(" ");
+}
 </script>
 </head> 
 <body>
