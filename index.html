@@ -97,7 +97,7 @@ function toUpper(str) {
     <div class="w3-bar w3-theme-d3 w3-left-align">
         <a href="javascript:void(0);" title="bars" class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-left w3-hover-none w3-theme-d2 rb-bars" onclick="openNav()"><i class="fa fa-bars"></i></a>
         <a href="/" title="home" class="w3-bar-item w3-button w3-hover-none"><i class="fa fa-home w3-margin-right"></i>Home</a>
-        <a href="/?page=movie&id=1" title="movie index" class="w3-bar-item w3-button w3-hide-small w3-hover-none">Movie</a>
+<!--         <a href="/?page=movie&id=1" title="movie index" class="w3-bar-item w3-button w3-hide-small w3-hover-none">Movie</a> -->
         <a href="/?page=anime&id=1" title="anime index" class="w3-bar-item w3-button w3-hide-small w3-hover-none">Anime</a>
         <a href="/?page=drama&id=1" title="drama index" class="w3-bar-item w3-button w3-hide-small w3-hover-none">Drama</a>
         <a href="/?page=series&id=1" title="series index" class="w3-bar-item w3-button w3-hide-small w3-hover-none">Series</a>           
@@ -156,18 +156,18 @@ async function updatePages() {
     if (base_url == url_string) {
         my_loader = `<div class="rb-loader-container" id="rb_loader"><div class="loader"><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--text"></div></div></div>`;
         document.getElementById("rb_movie1").innerHTML += my_loader;
-        let json_file;
-        try {
-            const response = await fetch("https://api.gdriveplayer.us/v1/movie/newest?limit=12&page=1", {
-                cache: "no-cache"
-            });
-            json_file = await response.json();
-        } catch (err) {
-            const response = await fetch("https://api.gdriveplayer.us/v1/movie/newest?limit=12&page=2", {
-                cache: "no-cache"
-            });
-            json_file = await response.json();
-        }
+        // let json_file;
+        // try {
+        //     const response = await fetch("https://api.gdriveplayer.us/v1/movie/newest?limit=12&page=1", {
+        //         cache: "no-cache"
+        //     });
+        //     json_file = await response.json();
+        // } catch (err) {
+        //     const response = await fetch("https://api.gdriveplayer.us/v1/movie/newest?limit=12&page=2", {
+        //         cache: "no-cache"
+        //     });
+        //     json_file = await response.json();
+        // }
         const response2 = await fetch("https://api.gdriveplayer.us/v1/animes/newest?limit=12", {
             cache: "no-cache"
         });
@@ -189,12 +189,12 @@ async function updatePages() {
         });
         const json_file4 = await response4.json();
         let home_html = `<h1 class="rb-content-desc">NEW MOVIE</h1><div class="w3-row-padding rb-content">`;
-        if (json_file) {
-            json_file.forEach(function(value) {
-                home_html += `<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.imdb}&types=movie" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (${value.year})</p></div></a></div></div>` + '\n'
-            });
-            home_html += `</div><h1 class="rb-content-desc">NEW ANIME</h1><div class="w3-row-padding rb-content">`;
-        }
+        // if (json_file) {
+        //     json_file.forEach(function(value) {
+        //         home_html += `<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.imdb}&types=movie" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (${value.year})</p></div></a></div></div>` + '\n'
+        //     });
+        //     home_html += `</div><h1 class="rb-content-desc">NEW ANIME</h1><div class="w3-row-padding rb-content">`;
+        // }
         json_file2.forEach(function(value) {
             home_html += `<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.id}&types=anime&episode=${value.total_episode}&id=${value.total_episode}" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (Episode: ${value.total_episode})</p></div></a></div></div>` + '\n'
         });
