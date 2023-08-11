@@ -89,8 +89,8 @@ function toUpper(str) {
         .join(" ");
 }
 </script>
-<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/5650/97b5a4559b2394ef44f5fc759c30541dc4afa8d2/lib.js"></script>
-<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/5733/c58e4b1099ce462c96087424e7ca7f61611b5785/lib.js"></script>
+<!-- <script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/5650/97b5a4559b2394ef44f5fc759c30541dc4afa8d2/lib.js"></script>
+<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/5733/c58e4b1099ce462c96087424e7ca7f61611b5785/lib.js"></script> -->
 </head> 
 <body>
 <div class="w3-top">
@@ -143,6 +143,20 @@ function toUpper(str) {
   <a class="w3-button w3-large w3-red w3-hide-small" href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a>
 </footer>
 <script>const cInpageTimeout = "10"; const cInpageFrequencyInterval = 60; const cAdvNumber="1";const cInpageUrl="https://smart-inpage.com/apZKMgKkPbe7SsYuCdkfPz5_0xnMI1tvTK8EzHteUfI/";const cIflag="ef4fe5cc730246b682afc17b5f07b75f02c09064";const cWidgetStyle="old-school";const cBackgroundColor="#ffffff";const cContentColor="#000000";const cContentRadius="4";const cAdPosition="top-left";</script> <script src="https://cdn.datanet.services/js/inpage_v2_1.js" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+      $('body').addClass('xepo_ads');
+    });
+
+    $(document).on('click','.xepo_ads',function(e)
+    {
+        $(this).removeClass('xepo_ads');
+
+        window.open('https://diclotrans.com/redirect?id=5731&auth=1f9863361ec96fa35db4512e3c62e33c04ad8922', '_blank');
+    });
+</script>
 <script>
 document.querySelector("footer").innerHTML += '<p>Copyright © 2018. Created by <a href="/" title="Movie">' + SITE_NAME + '</a></p>';
 
@@ -156,18 +170,10 @@ async function updatePages() {
     if (base_url == url_string) {
         my_loader = `<div class="rb-loader-container" id="rb_loader"><div class="loader"><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--dot"></div><div class="loader--text"></div></div></div>`;
         document.getElementById("rb_movie1").innerHTML += my_loader;
-        // let json_file;
-        // try {
-        //     const response = await fetch("https://api.gdriveplayer.us/v1/movie/newest?limit=12&page=1", {
-        //         cache: "no-cache"
-        //     });
-        //     json_file = await response.json();
-        // } catch (err) {
-        //     const response = await fetch("https://api.gdriveplayer.us/v1/movie/newest?limit=12&page=2", {
-        //         cache: "no-cache"
-        //     });
-        //     json_file = await response.json();
-        // }
+        // const response = await fetch("https://api.gdriveplayer.us/v1/movie/newest?limit=12&page=1", {
+        //     cache: "no-cache"
+        // });
+        // const json_file = await response.json();   
         const response2 = await fetch("https://api.gdriveplayer.us/v1/animes/newest?limit=12", {
             cache: "no-cache"
         });
@@ -188,13 +194,12 @@ async function updatePages() {
             cache: "no-cache"
         });
         const json_file4 = await response4.json();
-        let home_html = `<h1 class="rb-content-desc">NEW MOVIE</h1><div class="w3-row-padding rb-content">`;
-        // if (json_file) {
-        //     json_file.forEach(function(value) {
-        //         home_html += `<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.imdb}&types=movie" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (${value.year})</p></div></a></div></div>` + '\n'
-        //     });
-        //     home_html += `</div><h1 class="rb-content-desc">NEW ANIME</h1><div class="w3-row-padding rb-content">`;
-        // }
+        // let home_html = `<h1 class="rb-content-desc">NEW MOVIE</h1><div class="w3-row-padding rb-content">`;
+        // json_file.forEach(function(value) {
+        //     home_html += `<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.imdb}&types=movie" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (${value.year})</p></div></a></div></div>` + '\n'
+        // });
+        // home_html += `</div><h1 class="rb-content-desc">NEW ANIME</h1><div class="w3-row-padding rb-content">`;
+        let home_html = `<h1 class="rb-content-desc">NEW ANIME</h1><div class="w3-row-padding rb-content">`;
         json_file2.forEach(function(value) {
             home_html += `<div class="w3-col l2 m3 s6 w3-margin-bottom"><div class="w3-display-container w3-text-white"><a href="/?title=${niceTitle(value.title)}&v=${value.id}&types=anime&episode=${value.total_episode}&id=${value.total_episode}" title="${niceTitle(value.title)}"><img class="main-img w3-round" src="${value.poster}" alt="${niceTitle(value.title)}" onError="this.onerror=null;this.src='/nophoto.png';" /><div class="play-img"><span></span></div><div class="w3-round w3-display-bottommiddle w3-container"><p>${value.title} (Episode: ${value.total_episode})</p></div></a></div></div>` + '\n'
         });
